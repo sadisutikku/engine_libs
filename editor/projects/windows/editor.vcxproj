@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AC2EC5FA-98D0-EFD0-818B-03256DCC7621}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>editor</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <OutDir>..\..\..\..\build_output\release\</OutDir>
+    <IntDir>..\..\..\..\build_output\intermediate\x64\release\editor\</IntDir>
+    <TargetName>editor</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <OutDir>..\..\..\..\build_output\debug\</OutDir>
+    <IntDir>..\..\..\..\build_output\intermediate\x64\debug\editor\</IntDir>
+    <TargetName>editor</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>Silver_RUNTIME_STATIC=1;Silver_RUNTIME_SHARED=0;PLATFORM_WINDOWS;EDITOR;GUI_AVAILABLE;INPUT_AVAILABLE;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>stdint.h</ForcedIncludeFiles>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>core.lib;engine.lib;input.lib;gui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\build_output\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>Silver_RUNTIME_STATIC=1;Silver_RUNTIME_SHARED=0;PLATFORM_WINDOWS;EDITOR;GUI_AVAILABLE;INPUT_AVAILABLE;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>stdint.h</ForcedIncludeFiles>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>core.lib;engine.lib;input.lib;gui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\build_output\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\shared\events\editor_events.h" />
+    <ClInclude Include="..\..\shared\nodes\editor_node.h" />
+    <ClInclude Include="..\..\shared\ui\widgets\widget_assets.h" />
+    <ClInclude Include="..\..\shared\ui\widgets\widget_files.h" />
+    <ClInclude Include="..\..\shared\ui\widgets\widget_properties.h" />
+    <ClInclude Include="..\..\shared\ui\widgets\widget_scene_tree.h" />
+    <ClInclude Include="..\..\shared\ui\widgets\widget_toolbar.h" />
+    <ClInclude Include="..\..\shared\ui\widgets\widget_viewport.h" />
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_assets.h" />
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_base.h" />
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_components\editor_component_base.h" />
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_components\editor_component_files.h" />
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_components\regions\region_base.h" />
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_properties.h" />
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_scene_tree.h" />
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_toolbar.h" />
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_viewport.h" />
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_world.h" />
+    <ClInclude Include="..\..\shared\workspaces\workspace.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\shared\nodes\editor_node.cpp" />
+    <ClCompile Include="..\..\shared\ui\widgets\widget_assets.cpp" />
+    <ClCompile Include="..\..\shared\ui\widgets\widget_files.cpp" />
+    <ClCompile Include="..\..\shared\ui\widgets\widget_properties.cpp" />
+    <ClCompile Include="..\..\shared\ui\widgets\widget_scene_tree.cpp" />
+    <ClCompile Include="..\..\shared\ui\widgets\widget_toolbar.cpp" />
+    <ClCompile Include="..\..\shared\ui\widgets\widget_viewport.cpp" />
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_assets.cpp" />
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_components\editor_component_files.cpp" />
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_properties.cpp" />
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_scene_tree.cpp" />
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_toolbar.cpp" />
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_viewport.cpp" />
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_world.cpp" />
+    <ClCompile Include="..\..\shared\workspaces\workspace.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

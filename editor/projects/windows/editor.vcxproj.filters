@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="events">
+      <UniqueIdentifier>{5A9D08FC-463F-33D2-2FFA-46261B3BBA22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="nodes">
+      <UniqueIdentifier>{7E1C0410-EA30-2CC1-B3B2-CF201F8628F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{C3795900-AF05-880B-18B4-880B045F880B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\widgets">
+      <UniqueIdentifier>{49542EFA-350C-7047-9E13-49A38AEA0A38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="workspaces">
+      <UniqueIdentifier>{0762D70E-F319-195C-5C21-F2B748F8B34C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="workspaces\editors">
+      <UniqueIdentifier>{90F54178-7CD9-02CE-E539-FD20D13CED4F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="workspaces\editors\editor_components">
+      <UniqueIdentifier>{8BCEDB3F-77B5-9D37-2006-04550CCC169E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="workspaces\editors\editor_components\regions">
+      <UniqueIdentifier>{D1AAFCE7-BDBD-FC40-66A7-D92D5299998E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\shared\events\editor_events.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\nodes\editor_node.h">
+      <Filter>nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\ui\widgets\widget_assets.h">
+      <Filter>ui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\ui\widgets\widget_files.h">
+      <Filter>ui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\ui\widgets\widget_properties.h">
+      <Filter>ui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\ui\widgets\widget_scene_tree.h">
+      <Filter>ui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\ui\widgets\widget_toolbar.h">
+      <Filter>ui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\ui\widgets\widget_viewport.h">
+      <Filter>ui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_assets.h">
+      <Filter>workspaces\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_base.h">
+      <Filter>workspaces\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_components\editor_component_base.h">
+      <Filter>workspaces\editors\editor_components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_components\editor_component_files.h">
+      <Filter>workspaces\editors\editor_components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_components\regions\region_base.h">
+      <Filter>workspaces\editors\editor_components\regions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_properties.h">
+      <Filter>workspaces\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_scene_tree.h">
+      <Filter>workspaces\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_toolbar.h">
+      <Filter>workspaces\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_viewport.h">
+      <Filter>workspaces\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\editors\editor_world.h">
+      <Filter>workspaces\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\workspaces\workspace.h">
+      <Filter>workspaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\shared\nodes\editor_node.cpp">
+      <Filter>nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\ui\widgets\widget_assets.cpp">
+      <Filter>ui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\ui\widgets\widget_files.cpp">
+      <Filter>ui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\ui\widgets\widget_properties.cpp">
+      <Filter>ui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\ui\widgets\widget_scene_tree.cpp">
+      <Filter>ui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\ui\widgets\widget_toolbar.cpp">
+      <Filter>ui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\ui\widgets\widget_viewport.cpp">
+      <Filter>ui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_assets.cpp">
+      <Filter>workspaces\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_components\editor_component_files.cpp">
+      <Filter>workspaces\editors\editor_components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_properties.cpp">
+      <Filter>workspaces\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_scene_tree.cpp">
+      <Filter>workspaces\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_toolbar.cpp">
+      <Filter>workspaces\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_viewport.cpp">
+      <Filter>workspaces\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\workspaces\editors\editor_world.cpp">
+      <Filter>workspaces\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\workspaces\workspace.cpp">
+      <Filter>workspaces</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

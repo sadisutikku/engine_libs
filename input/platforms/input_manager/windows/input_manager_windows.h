@@ -1,0 +1,25 @@
+//////////////////////////////////////////////////////////////////////
+//! MIT License
+//! Copyright (c) 2022 sadisutikku
+//! Part of https://github.com/sadisutikku/engine_libs.git
+//////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+//////////////////////////////////////////////////////////////////////
+//! Includes
+//////////////////////////////////////////////////////////////////////
+
+#include "core/platforms/include_wrappers/windows/windows.h"
+
+namespace input
+{
+	class INPUT_MANAGER_WINDOWS
+	{
+	public:
+		INPUT_MANAGER_WINDOWS();
+		~INPUT_MANAGER_WINDOWS() = default;
+
+		bool handle_platform_message(HWND in_window, uint32_t in_message, WPARAM in_wparam, LPARAM in_lparam);
+	};
+}

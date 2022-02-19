@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="platforms">
+      <UniqueIdentifier>{FDCC2FD5-6937-E44B-B275-95F11E1FC2A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\application">
+      <UniqueIdentifier>{601482AC-CC80-3DA7-9574-D50401A05F0F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\application\windows">
+      <UniqueIdentifier>{BAB6559B-26CF-3CC5-EF7B-CC5E5B53D15E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\application_delegates">
+      <UniqueIdentifier>{4DB9199B-B99C-28DB-C29F-56172E02EF2B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\application_delegates\windows">
+      <UniqueIdentifier>{A7F885C0-1388-47AB-1C84-28C3889282B7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\clipboard">
+      <UniqueIdentifier>{5CB1E41D-C812-C22B-5180-08DEBDE0F8EA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\clipboard\windows">
+      <UniqueIdentifier>{B68F13CE-229D-41B4-AB83-3D9F17900D6B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\console_application">
+      <UniqueIdentifier>{D265652A-3E7E-4C54-072B-DCED7302E1ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\console_application\windows">
+      <UniqueIdentifier>{2C5A648B-981E-637B-6184-9345CD07FFB0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared">
+      <UniqueIdentifier>{9C5CB11B-88FE-DBF1-71B9-EF455DFA6242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\application">
+      <UniqueIdentifier>{7F0AD91E-6BEE-9974-D44E-94C7C05184F6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\clipboard">
+      <UniqueIdentifier>{BB9379D7-A78C-9829-D0BE-7DAEBC167835}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\command_line">
+      <UniqueIdentifier>{11161831-7D77-F53E-06E5-3BF172452CFE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\events">
+      <UniqueIdentifier>{20554AA1-8C15-C6D7-5550-0F55C1CF0AB4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\game_framework">
+      <UniqueIdentifier>{F2F8051E-5E65-C118-2759-59769384E380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\game_framework\nodes">
+      <UniqueIdentifier>{5AF8D472-C605-0359-4FEC-FE43BBF8CE0F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\platforms\application\windows\application_windows.h">
+      <Filter>platforms\application\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\platforms\application_delegates\windows\application_delegates_windows.h">
+      <Filter>platforms\application_delegates\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\platforms\clipboard\windows\clipboard_windows.h">
+      <Filter>platforms\clipboard\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\platforms\console_application\windows\console_application_windows.h">
+      <Filter>platforms\console_application\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\application\application.h">
+      <Filter>shared\application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\clipboard\clipboard.h">
+      <Filter>shared\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\command_line\command_line.h">
+      <Filter>shared\command_line</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\events\event_base.h">
+      <Filter>shared\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\events\events_manager.h">
+      <Filter>shared\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\events\events_receiver.h">
+      <Filter>shared\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\events\node_events.h">
+      <Filter>shared\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\game_framework\game_instance.h">
+      <Filter>shared\game_framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\game_framework\level.h">
+      <Filter>shared\game_framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\game_framework\mesh.h">
+      <Filter>shared\game_framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\game_framework\nodes\engine_node.h">
+      <Filter>shared\game_framework\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\game_framework\nodes\node.h">
+      <Filter>shared\game_framework\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\game_framework\nodes\node_tree.h">
+      <Filter>shared\game_framework\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\game_framework\world.h">
+      <Filter>shared\game_framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\game_framework\world_object.h">
+      <Filter>shared\game_framework</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\platforms\application\windows\application_windows.cpp">
+      <Filter>platforms\application\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\application_delegates\windows\application_delegates_windows.cpp">
+      <Filter>platforms\application_delegates\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\clipboard\windows\clipboard_windows.cpp">
+      <Filter>platforms\clipboard\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\console_application\windows\console_application_windows.cpp">
+      <Filter>platforms\console_application\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\application\application.cpp">
+      <Filter>shared\application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\clipboard\clipboard.cpp">
+      <Filter>shared\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\command_line\command_line.cpp">
+      <Filter>shared\command_line</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\events\events_manager.cpp">
+      <Filter>shared\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\events\events_receiver.cpp">
+      <Filter>shared\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\game_framework\game_instance.cpp">
+      <Filter>shared\game_framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\game_framework\level.cpp">
+      <Filter>shared\game_framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\game_framework\mesh.cpp">
+      <Filter>shared\game_framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\game_framework\nodes\engine_node.cpp">
+      <Filter>shared\game_framework\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\game_framework\nodes\node.cpp">
+      <Filter>shared\game_framework\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\game_framework\nodes\node_tree.cpp">
+      <Filter>shared\game_framework\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\game_framework\world.cpp">
+      <Filter>shared\game_framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\game_framework\world_object.cpp">
+      <Filter>shared\game_framework</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,22 @@
+
+#pragma once
+
+//////////////////////////////////////////////////////////////////////
+//! Includes
+//////////////////////////////////////////////////////////////////////
+
+
+
+namespace gui
+{
+	enum class TEXTURE_SLOTS : uint8_t
+	{
+		MATERIAL_ALBEDO = 0,
+		TEXTURE = 31,
+	};
+
+	enum class SAMPLER_SLOTS : uint8_t
+	{
+		POINT_CLAMP = 1,
+	};
+}

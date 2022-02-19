@@ -1,0 +1,24 @@
+//////////////////////////////////////////////////////////////////////
+//! MIT License
+//! Copyright (c) 2022 sadisutikku
+//! Part of https://github.com/sadisutikku/engine_libs.git
+//////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+//////////////////////////////////////////////////////////////////////
+//! Defines
+//////////////////////////////////////////////////////////////////////
+
+#if ENABLE_LOGGING
+
+#define CREATE_LOG_CATEGORY(category) core::LOG_CATEGORY category(#category, core::LOG_CATEGORY::DEFAULT_FLAGS, \
+	core::LOG_VERBOSITY::ASSERT, core::LOG_CATEGORY::ROOT_CATEGORY)
+
+#define EXTERN_LOG_CATEGORY(category) extern core::LOG_CATEGORY category;
+
+#else
+
+
+
+#endif	

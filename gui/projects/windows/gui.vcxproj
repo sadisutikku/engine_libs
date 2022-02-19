@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8A78880B-F681-887C-7FFD-9E7CEB05947C}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>gui</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <OutDir>..\..\..\..\build_output\release\</OutDir>
+    <IntDir>..\..\..\..\build_output\intermediate\x64\release\gui\</IntDir>
+    <TargetName>gui</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <OutDir>..\..\..\..\build_output\debug\</OutDir>
+    <IntDir>..\..\..\..\build_output\intermediate\x64\debug\gui\</IntDir>
+    <TargetName>gui</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>Silver_RUNTIME_STATIC=1;Silver_RUNTIME_SHARED=0;PLATFORM_WINDOWS;EDITOR;GUI_AVAILABLE;INPUT_AVAILABLE;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>stdint.h</ForcedIncludeFiles>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>core.lib;engine.lib;vulkan-1.lib;spirv-cross-core_debug.lib;spirv-cross-glsl_debug.lib;spirv-cross-hlsl_debug.lib;dxcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\build_output\debug;..\..\thirdparty;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>Silver_RUNTIME_STATIC=1;Silver_RUNTIME_SHARED=0;PLATFORM_WINDOWS;EDITOR;GUI_AVAILABLE;INPUT_AVAILABLE;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>stdint.h</ForcedIncludeFiles>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>core.lib;engine.lib;vulkan-1.lib;spirv-cross-core_debug.lib;spirv-cross-glsl_debug.lib;spirv-cross-hlsl_debug.lib;dxcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\build_output\debug;..\..\thirdparty;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\RHI_context_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\RHI_device_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\buffer_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\descriptor_set_layout_cache_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\descriptor_set_layout_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\descriptor_set_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\descriptor_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\pipeline_state_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\pipeline_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\shader_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\swapchain_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\texture2d_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\utilities_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\vulkan\vulkan_types.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\RHI_context_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\RHI_device_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\RHI_swapchain_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\buffer_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\command_list_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\constant_buffer_d3d11 - Copy.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\constant_buffer_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\d3d11_types.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\dxgi_info_manager.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\input_layout_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\pipeline_state_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\quad_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\rasteriser_state_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\sampler_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\shader_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\RHI\windows\d3d11\texture2d_d3d11.h" />
+    <ClInclude Include="..\..\platforms\graphics\renderer\vulkan\renderer_vulkan.h" />
+    <ClInclude Include="..\..\platforms\graphics\renderer\windows\renderer_d3d11.h" />
+    <ClInclude Include="..\..\platforms\window\windows\window_windows.h" />
+    <ClInclude Include="..\..\shared\events\render_events.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\RHI_context_base.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\RHI_device.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\RHI_device_base.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\RHI_pyhsical_device.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\RHI_swapchain _base.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\RHI_swapchain.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\RHI_types.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\buffer_base.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\command_list.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\command_list_base.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\constant_buffer_base.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\descriptor.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\input_layout.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\pipeline_state_base.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\rasteriser_state_base.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\render_information.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\shader_base.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\shader_bindings.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\texture2d_base.h" />
+    <ClInclude Include="..\..\shared\graphics\RHI\viewport.h" />
+    <ClInclude Include="..\..\shared\graphics\constant_buffers.h" />
+    <ClInclude Include="..\..\shared\graphics\default_geometry.h" />
+    <ClInclude Include="..\..\shared\graphics\material.h" />
+    <ClInclude Include="..\..\shared\graphics\renderer\renderer.h" />
+    <ClInclude Include="..\..\shared\graphics\renderer\renderer_base.h" />
+    <ClInclude Include="..\..\shared\graphics\storage\render_storage.h" />
+    <ClInclude Include="..\..\shared\graphics\window_resources\window_resources_base.h" />
+    <ClInclude Include="..\..\shared\imgui\imgui.h" />
+    <ClInclude Include="..\..\shared\importers\image_importer.h" />
+    <ClInclude Include="..\..\shared\nodes\gui_node.h" />
+    <ClInclude Include="..\..\shared\screen\camera3d.h" />
+    <ClInclude Include="..\..\shared\screen\screen.h" />
+    <ClInclude Include="..\..\shared\screen\screen_area.h" />
+    <ClInclude Include="..\..\shared\screen\screen_manager.h" />
+    <ClInclude Include="..\..\shared\ui\image.h" />
+    <ClInclude Include="..\..\shared\ui\rendering\ui_renderer.h" />
+    <ClInclude Include="..\..\shared\ui\widgets\containers\container.h" />
+    <ClInclude Include="..\..\shared\ui\widgets\widget.h" />
+    <ClInclude Include="..\..\shared\window\window.h" />
+    <ClInclude Include="..\..\shared\window\window_base.h" />
+    <ClInclude Include="..\..\shared\window\window_details.h" />
+    <ClInclude Include="..\..\thirdparty\DirectXShaderCompiler\d3d12shader.h" />
+    <ClInclude Include="..\..\thirdparty\DirectXShaderCompiler\dxcapi.h" />
+    <ClInclude Include="..\..\thirdparty\SPIRV-Cross-2020-09-17\spirv_cross\GLSL.std.450.h" />
+    <ClInclude Include="..\..\thirdparty\SPIRV-Cross-2020-09-17\spirv_cross\spirv.hpp" />
+    <ClInclude Include="..\..\thirdparty\SPIRV-Cross-2020-09-17\spirv_cross\spirv_cfg.hpp" />
+    <ClInclude Include="..\..\thirdparty\SPIRV-Cross-2020-09-17\spirv_cross\spirv_common.hpp" />
+    <ClInclude Include="..\..\thirdparty\SPIRV-Cross-2020-09-17\spirv_cross\spirv_cross.hpp" />
+    <ClInclude Include="..\..\thirdparty\SPIRV-Cross-2020-09-17\spirv_cross\spirv_cross_containers.hpp" />
+    <ClInclude Include="..\..\thirdparty\SPIRV-Cross-2020-09-17\spirv_cross\spirv_cross_error_handling.hpp" />
+    <ClInclude Include="..\..\thirdparty\SPIRV-Cross-2020-09-17\spirv_cross\spirv_cross_parsed_ir.hpp" />
+    <ClInclude Include="..\..\thirdparty\SPIRV-Cross-2020-09-17\spirv_cross\spirv_glsl.hpp" />
+    <ClInclude Include="..\..\thirdparty\SPIRV-Cross-2020-09-17\spirv_cross\spirv_hlsl.hpp" />
+    <ClInclude Include="..\..\thirdparty\imgui\imconfig.h" />
+    <ClInclude Include="..\..\thirdparty\imgui\imgui.h" />
+    <ClInclude Include="..\..\thirdparty\imgui\imgui_internal.h" />
+    <ClInclude Include="..\..\thirdparty\imgui\imgui_stdlib.h" />
+    <ClInclude Include="..\..\thirdparty\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\..\thirdparty\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\..\thirdparty\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\..\thirdparty\imgui\windows\imgui_impl_dx11.h" />
+    <ClInclude Include="..\..\thirdparty\imgui\windows\imgui_impl_win32.h" />
+    <ClInclude Include="..\..\thirdparty\stb\stb_image.h" />
+    <ClInclude Include="..\..\thirdparty\stb\stb_image_resize.h" />
+    <ClInclude Include="..\..\thirdparty\stb\stb_image_write.h" />
+    <ClInclude Include="..\..\thirdparty\vk_mem_alloc.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vk_enum_string_helper.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vk_icd.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vk_layer.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vk_platform.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vk_sdk_platform.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan.hpp" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_android.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_beta.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_core.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_directfb.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_fuchsia.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_ggp.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_ios.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_macos.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_metal.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_vi.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_wayland.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_win32.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_xcb.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_xlib.h" />
+    <ClInclude Include="..\..\thirdparty\vulkan\vulkan_xlib_xrandr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\RHI_context_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\RHI_device_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\buffer_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\descriptor_set_layout_cache_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\descriptor_set_layout_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\descriptor_set_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\pipeline_state_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\pipeline_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\shader_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\swapchain_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\texture2d_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\vulkan\utilities_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\RHI_context_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\RHI_device_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\RHI_swapchain_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\buffer_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\command_list_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\dxgi_info_manager.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\input_layout_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\pipeline_state_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\quad_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\rasteriser_state_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\sampler_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\shader_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\RHI\windows\d3d11\texture2d_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\renderer\vulkan\renderer_vulkan.cpp" />
+    <ClCompile Include="..\..\platforms\graphics\renderer\windows\renderer_d3d11.cpp" />
+    <ClCompile Include="..\..\platforms\window\windows\window_windows.cpp" />
+    <ClCompile Include="..\..\shared\graphics\RHI\RHI_device.cpp" />
+    <ClCompile Include="..\..\shared\graphics\RHI\RHI_device_base.cpp" />
+    <ClCompile Include="..\..\shared\graphics\RHI\RHI_swapchain.cpp" />
+    <ClCompile Include="..\..\shared\graphics\RHI\command_list.cpp" />
+    <ClCompile Include="..\..\shared\graphics\RHI\command_list_base.cpp" />
+    <ClCompile Include="..\..\shared\graphics\RHI\pipeline_state_base.cpp" />
+    <ClCompile Include="..\..\shared\graphics\RHI\rasteriser_state_base.cpp" />
+    <ClCompile Include="..\..\shared\graphics\RHI\shader_base.cpp" />
+    <ClCompile Include="..\..\shared\graphics\RHI\texture2d_base.cpp" />
+    <ClCompile Include="..\..\shared\graphics\material.cpp" />
+    <ClCompile Include="..\..\shared\graphics\renderer\renderer.cpp" />
+    <ClCompile Include="..\..\shared\graphics\renderer\renderer_base.cpp" />
+    <ClCompile Include="..\..\shared\graphics\storage\render_storage.cpp" />
+    <ClCompile Include="..\..\shared\imgui\imgui.cpp" />
+    <ClCompile Include="..\..\shared\importers\image_importer.cpp" />
+    <ClCompile Include="..\..\shared\nodes\gui_node.cpp" />
+    <ClCompile Include="..\..\shared\screen\camera3d.cpp" />
+    <ClCompile Include="..\..\shared\screen\screen.cpp" />
+    <ClCompile Include="..\..\shared\screen\screen_area.cpp" />
+    <ClCompile Include="..\..\shared\screen\screen_manager.cpp" />
+    <ClCompile Include="..\..\shared\ui\image.cpp" />
+    <ClCompile Include="..\..\shared\ui\rendering\ui_renderer.cpp" />
+    <ClCompile Include="..\..\shared\ui\widgets\containers\container.cpp" />
+    <ClCompile Include="..\..\shared\ui\widgets\widget.cpp" />
+    <ClCompile Include="..\..\shared\window\window.cpp" />
+    <ClCompile Include="..\..\shared\window\window_base.cpp" />
+    <ClCompile Include="..\..\thirdparty\imgui\imgui.cpp">
+      <ObjectFileName>$(IntDir)\imgui1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\thirdparty\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\..\thirdparty\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\thirdparty\imgui\imgui_stdlib.cpp" />
+    <ClCompile Include="..\..\thirdparty\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\..\thirdparty\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\..\thirdparty\imgui\windows\imgui_impl_dx11.cpp" />
+    <ClCompile Include="..\..\thirdparty\imgui\windows\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\..\thirdparty\vk_mem_alloc.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

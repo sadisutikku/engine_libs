@@ -1,0 +1,22 @@
+//////////////////////////////////////////////////////////////////////
+//! MIT License
+//! Copyright (c) 2022 sadisutikku
+//! Part of https://github.com/sadisutikku/engine_libs.git
+//////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////
+//! Includes
+//////////////////////////////////////////////////////////////////////
+
+#include "core/shared/logging/log_manager.h"
+
+#include "core/shared/console/console.h"
+#include "core/shared/logging/log_message.h"
+
+namespace core
+{
+	void LOG_MANAGER::log_message(const core::LOG_MESSAGE& in_log_message)
+	{
+		CONSOLE::get_singleton().write( in_log_message.get_full_string() );
+	}
+}

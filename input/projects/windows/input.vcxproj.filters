@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="platforms">
+      <UniqueIdentifier>{FDCC2FD5-6937-E44B-B275-95F11E1FC2A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\input_manager">
+      <UniqueIdentifier>{5671D6D2-C2A8-1E6A-CBB2-828D37694563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\input_manager\windows">
+      <UniqueIdentifier>{B0A9DA7D-1C8D-E9BD-2590-17FA91F2AF0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\keyboard">
+      <UniqueIdentifier>{3D8AA926-296E-6A7C-92CE-64CF7ED154FE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\keyboard\windows">
+      <UniqueIdentifier>{97B98FBB-83C9-3B8C-EC82-A0AAD8B12A25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\mouse">
+      <UniqueIdentifier>{359ABCAD-A125-2A72-AA36-AD6616418672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\mouse\windows">
+      <UniqueIdentifier>{8F41CFC8-FB78-1760-0483-7B8370393E59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared">
+      <UniqueIdentifier>{9C5CB11B-88FE-DBF1-71B9-EF455DFA6242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\input_manager">
+      <UniqueIdentifier>{356BC336-21FA-4C00-CA18-61FBB6865DA6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\keyboard">
+      <UniqueIdentifier>{BC1CECB7-28A8-597C-31B9-DC709DC3B57C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\mouse">
+      <UniqueIdentifier>{142559A8-0088-E84C-A90D-2103954FB4CF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\platforms\input_manager\windows\input_manager_windows.h">
+      <Filter>platforms\input_manager\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\platforms\keyboard\windows\keyboard_windows.h">
+      <Filter>platforms\keyboard\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\platforms\mouse\windows\mouse_windows.h">
+      <Filter>platforms\mouse\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\input_component.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\input_definition.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\input_events.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\input_forward_declares.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\input_manager\input_manager.h">
+      <Filter>shared\input_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\input_types.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\keyboard\key_codes.h">
+      <Filter>shared\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\keyboard\keyboard.h">
+      <Filter>shared\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\keyboard\keyboard_base.h">
+      <Filter>shared\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\mouse\mouse.h">
+      <Filter>shared\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\mouse\mouse_base.h">
+      <Filter>shared\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\mouse\mouse_codes.h">
+      <Filter>shared\mouse</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\platforms\input_manager\windows\input_manager_windows.cpp">
+      <Filter>platforms\input_manager\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\keyboard\windows\keyboard_windows.cpp">
+      <Filter>platforms\keyboard\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\mouse\windows\mouse_windows.cpp">
+      <Filter>platforms\mouse\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\input_component.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\input_manager\input_manager.cpp">
+      <Filter>shared\input_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\keyboard\keyboard.cpp">
+      <Filter>shared\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\keyboard\keyboard_base.cpp">
+      <Filter>shared\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\mouse\mouse.cpp">
+      <Filter>shared\mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\mouse\mouse_base.cpp">
+      <Filter>shared\mouse</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

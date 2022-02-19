@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FBDB78FB-E77D-A3D1-D038-B725BC792A22}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <OutDir>..\..\..\..\build_output\release\</OutDir>
+    <IntDir>..\..\..\..\build_output\intermediate\x64\release\engine\</IntDir>
+    <TargetName>engine</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <OutDir>..\..\..\..\build_output\debug\</OutDir>
+    <IntDir>..\..\..\..\build_output\intermediate\x64\debug\engine\</IntDir>
+    <TargetName>engine</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>Silver_RUNTIME_STATIC=1;Silver_RUNTIME_SHARED=0;PLATFORM_WINDOWS;EDITOR;GUI_AVAILABLE;INPUT_AVAILABLE;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>stdint.h</ForcedIncludeFiles>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\build_output\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>Silver_RUNTIME_STATIC=1;Silver_RUNTIME_SHARED=0;PLATFORM_WINDOWS;EDITOR;GUI_AVAILABLE;INPUT_AVAILABLE;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>stdint.h</ForcedIncludeFiles>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\build_output\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\platforms\application\windows\application_windows.h" />
+    <ClInclude Include="..\..\platforms\application_delegates\windows\application_delegates_windows.h" />
+    <ClInclude Include="..\..\platforms\clipboard\windows\clipboard_windows.h" />
+    <ClInclude Include="..\..\platforms\console_application\windows\console_application_windows.h" />
+    <ClInclude Include="..\..\shared\application\application.h" />
+    <ClInclude Include="..\..\shared\clipboard\clipboard.h" />
+    <ClInclude Include="..\..\shared\command_line\command_line.h" />
+    <ClInclude Include="..\..\shared\events\event_base.h" />
+    <ClInclude Include="..\..\shared\events\events_manager.h" />
+    <ClInclude Include="..\..\shared\events\events_receiver.h" />
+    <ClInclude Include="..\..\shared\events\node_events.h" />
+    <ClInclude Include="..\..\shared\game_framework\game_instance.h" />
+    <ClInclude Include="..\..\shared\game_framework\level.h" />
+    <ClInclude Include="..\..\shared\game_framework\mesh.h" />
+    <ClInclude Include="..\..\shared\game_framework\nodes\engine_node.h" />
+    <ClInclude Include="..\..\shared\game_framework\nodes\node.h" />
+    <ClInclude Include="..\..\shared\game_framework\nodes\node_tree.h" />
+    <ClInclude Include="..\..\shared\game_framework\world.h" />
+    <ClInclude Include="..\..\shared\game_framework\world_object.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\platforms\application\windows\application_windows.cpp" />
+    <ClCompile Include="..\..\platforms\application_delegates\windows\application_delegates_windows.cpp" />
+    <ClCompile Include="..\..\platforms\clipboard\windows\clipboard_windows.cpp" />
+    <ClCompile Include="..\..\platforms\console_application\windows\console_application_windows.cpp" />
+    <ClCompile Include="..\..\shared\application\application.cpp" />
+    <ClCompile Include="..\..\shared\clipboard\clipboard.cpp" />
+    <ClCompile Include="..\..\shared\command_line\command_line.cpp" />
+    <ClCompile Include="..\..\shared\events\events_manager.cpp" />
+    <ClCompile Include="..\..\shared\events\events_receiver.cpp" />
+    <ClCompile Include="..\..\shared\game_framework\game_instance.cpp" />
+    <ClCompile Include="..\..\shared\game_framework\level.cpp" />
+    <ClCompile Include="..\..\shared\game_framework\mesh.cpp" />
+    <ClCompile Include="..\..\shared\game_framework\nodes\engine_node.cpp" />
+    <ClCompile Include="..\..\shared\game_framework\nodes\node.cpp" />
+    <ClCompile Include="..\..\shared\game_framework\nodes\node_tree.cpp" />
+    <ClCompile Include="..\..\shared\game_framework\world.cpp" />
+    <ClCompile Include="..\..\shared\game_framework\world_object.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

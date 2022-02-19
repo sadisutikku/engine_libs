@@ -1,0 +1,18 @@
+
+#pragma once
+
+//////////////////////////////////////////////////////////////////////
+//! Includes
+//////////////////////////////////////////////////////////////////////
+
+#include <map>
+
+namespace core
+{
+	template<typename KEY_TYPE, typename VALUE_TYPE>
+	class MAP : public std::map<KEY_TYPE, VALUE_TYPE>
+	{
+	public:
+
+	};
+}

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="platforms">
+      <UniqueIdentifier>{FDCC2FD5-6937-E44B-B275-95F11E1FC2A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\console">
+      <UniqueIdentifier>{3F29070D-AB3F-05A3-F4B6-90C4600CD62A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\console\windows">
+      <UniqueIdentifier>{993A15E2-05FD-486C-4EAD-D7F8BAAE214A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\debugging">
+      <UniqueIdentifier>{18ABBC0D-840C-9A1B-0D7A-E0CD79DAD0DA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platforms\debugging\windows">
+      <UniqueIdentifier>{7285373A-DE92-6520-6779-610BD38531D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared">
+      <UniqueIdentifier>{9C5CB11B-88FE-DBF1-71B9-EF455DFA6242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\console">
+      <UniqueIdentifier>{DEE7F120-CAB5-E526-B349-564D9FB6C18B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\debugging">
+      <UniqueIdentifier>{778D51C7-6386-7019-8CB8-559E78105025}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\logging">
+      <UniqueIdentifier>{52B138D5-3E7F-2CDB-2713-9D0113800840}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\math">
+      <UniqueIdentifier>{158F5F1C-8144-D811-0A39-D2E876EDCE15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\misc">
+      <UniqueIdentifier>{F7B05F1C-6366-D811-EC5A-D2E8580FCF15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\patterns">
+      <UniqueIdentifier>{1C0CE316-8897-50DB-91A8-D3CFFDB2ACDB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="platforms\console\windows\windows_console.h">
+      <Filter>platforms\console\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="platforms\debugging\windows\debugger_windows.h">
+      <Filter>platforms\debugging\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\build_config.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\console\console.h">
+      <Filter>shared\console</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\debugging\asserts.h">
+      <Filter>shared\debugging</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\debugging\debugger.h">
+      <Filter>shared\debugging</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\distribution.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\logging\log_category.h">
+      <Filter>shared\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\logging\log_flags.h">
+      <Filter>shared\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\logging\log_manager.h">
+      <Filter>shared\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\logging\log_message.h">
+      <Filter>shared\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\logging\logging.h">
+      <Filter>shared\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\math\box_sphere.h">
+      <Filter>shared\math</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\math\math_utilities.h">
+      <Filter>shared\math</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\math\positional_math.h">
+      <Filter>shared\math</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\math\rectangle.h">
+      <Filter>shared\math</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\math\rotator.h">
+      <Filter>shared\math</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\math\transform.h">
+      <Filter>shared\math</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\math\vector.h">
+      <Filter>shared\math</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\math\vector2d.h">
+      <Filter>shared\math</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\math\vector4d.h">
+      <Filter>shared\math</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\misc\bitfields.h">
+      <Filter>shared\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\misc\core_misc_defines.h">
+      <Filter>shared\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\misc\noop_counter.h">
+      <Filter>shared\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\misc\single_thread_runnable.h">
+      <Filter>shared\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\patterns\automatic_singleton.h">
+      <Filter>shared\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\patterns\non_automatic_singleton.h">
+      <Filter>shared\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\platform.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="platforms\console\windows\windows_console.cpp">
+      <Filter>platforms\console\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="platforms\debugging\windows\debugger_windows.cpp">
+      <Filter>platforms\debugging\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\build_config.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\console\console.cpp">
+      <Filter>shared\console</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\distribution.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\logging\log_category.cpp">
+      <Filter>shared\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\logging\log_manager.cpp">
+      <Filter>shared\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\logging\log_message.cpp">
+      <Filter>shared\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\math\box_sphere.cpp">
+      <Filter>shared\math</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\math\positional_math.cpp">
+      <Filter>shared\math</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\math\transform.cpp">
+      <Filter>shared\math</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\platform.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
