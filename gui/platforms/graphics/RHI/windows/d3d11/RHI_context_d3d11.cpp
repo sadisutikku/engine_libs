@@ -11,6 +11,7 @@
 #include "gui/platforms/graphics/RHI/windows/d3d11/pipeline_state_d3d11.h"
 #include "gui/platforms/graphics/RHI/windows/d3d11/sampler_d3d11.h"
 #include "gui/platforms/graphics/RHI/windows/d3d11/shader_d3d11.h"
+#include "gui/platforms/graphics/RHI/windows/d3d11/structured_buffer.h"
 #include "gui/platforms/graphics/RHI/windows/d3d11/rasteriser_state_d3d11.h"
 #include "gui/shared/graphics/RHI/input_layout.h"
 #include "gui/shared/graphics/RHI/viewport.h"
@@ -268,6 +269,34 @@ namespace gui
 		}
 	}
 
+	void RENDERING_CONTEXT_D3D11::set_structured_buffer_uav( const uint32_t slot, const STRUCTURED_BUFFER_UAV_D3D11& structured_buffer ) const
+    {
+        std::array<void*, 1> view_array = { structured_buffer.get_resource_uav() };
+        const UINT range = 1;
+
+        ID3D11UnorderedAccessView* set_uav{};
+        m_device_context->CSGetUnorderedAccessViews( slot, range, &set_uav );
+
+        if ( set_uav != view_array[ 0 ] )
+        {
+            m_device_context->CSSetUnorderedAccessViews( slot, range, reinterpret_cast<ID3D11UnorderedAccessView* const*>( &view_array ), nullptr );
+        }
+    }
+
+	void RENDERING_CONTEXT_D3D11::set_structured_buffer_srv( const uint32_t slot, const STRUCTURED_BUFFER_SRV_D3D11& structured_buffer ) const
+    {
+        std::array<void*, 1> view_array = { structured_buffer.get_resource_srv() };
+        const UINT range = 1;
+
+        ID3D11ShaderResourceView* set_uav{};
+        m_device_context->CSGetShaderResources( slot, range, &set_uav );
+
+        if ( set_uav != view_array[ 0 ] )
+        {
+            m_device_context->CSSetShaderResources( slot, range, reinterpret_cast<ID3D11ShaderResourceView* const*>( &view_array ) );
+        }
+    }
+
 	void RENDERING_CONTEXT_D3D11::set_texture( const TEXTURE_SLOTS texture_slot, TEXTURE2D_D3D11* texture )
 	{
 		ASSERT( texture, "Texture is nullptr" );
@@ -318,5 +347,16 @@ namespace gui
 		m_device_context->DrawIndexed( static_cast<UINT>(index_count), static_cast<UINT>(index_offset), static_cast<INT>(vertex_offset) );
 
 		return true;
+	}
+
+	void RENDERING_CONTEXT_D3D11::dispatch_compute( const uint32_t x, const uint32_t y, const uint32_t z )
+	{
+		m_device_context->Dispatch( x, y, z ); // thread group count will be the max of the numbers pass here and the const numbers in the compute shader
+
+		// Make sure to clean the compute shader UAV slots after dispatching.
+        // If we try to bind the resource but it's still bound as a computer shader output the runtime will automatically set the it to null.
+		constexpr auto NUM_RESOURCES{ 8u };
+        const void* resource_array[ NUM_RESOURCES ] = { nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr };
+        m_device_context->CSSetUnorderedAccessViews( 0u, NUM_RESOURCES, reinterpret_cast<ID3D11UnorderedAccessView* const*>( &resource_array ), nullptr );
 	}
 }
